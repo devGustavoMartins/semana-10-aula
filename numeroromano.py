@@ -7,7 +7,8 @@ def converte(numeroEmRomano):
   tabela['L'] = 50;
   tabela['C'] = 100;
   tabela['D'] = 500;
-  tabela['M'] = 10000;
+  # Reduzir de 10000 para 1000, pois M representa mil.
+  tabela['M'] = 1000;
   
   acumulador = 0;
   ultimovizinhodireita = 0;
@@ -19,7 +20,8 @@ def converte(numeroEmRomano):
 
     multiplicador = 1;
     if(atual < ultimovizinhodireita):
-      multiplicador = 1;
+      # Alterar de 1 para -1 para subtrair o símbolo menor à esquerda.
+      multiplicador = -1;
 
     acumulador += atual * multiplicador;       
     ultimovizinhodireita = atual;
